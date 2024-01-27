@@ -1,0 +1,62 @@
+/* nav.css */
+
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #181719;
+  padding: 40px;
+  position: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.navbar ul li:hover {
+  text-shadow: 2px 8px 8px #8528e2;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 100;
+  display: flex;
+  flex-direction: column
+}
+
+li {
+  margin-right: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+/* Optional: Add styles for active link */
+a.active {
+  color: yellow;
+}
+
+/* Optional: Style for dropdown menu */
+ul.dropdown {
+  position: relative;
+}
+
+li.dropdown-item {
+  position: relative;
+}
+
+ul.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #a61212;
+  padding: 100px;
+}
+
+li:hover > ul.dropdown-menu {
+  display: block;
+}
