@@ -28,7 +28,7 @@ function Profile() {
        </div>
 
        <div className="embed">
-      <p>Resume:</p>
+      <h5>Resume:</h5>
       <iframe src="https://docs.google.com/document/d/1JymkivBFogSjGwIEufmdmFrW2YOxofThw4iV2hac8Fo/edit?usp=sharing" height="400" width="400"></iframe>
       </div>
       
