@@ -2,6 +2,8 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import auth
 import adding_user
+import firebase_setup as fb_s
+
 
 cred = credentials.Certificate("firebase_credentials.json")
 # firebase_admin.initialize_app(cred)
@@ -24,7 +26,7 @@ def create_user(email, password, ucinetid, displayName):
         print(e)
         return None
 
-def sign_in_with_email_and_password(email, password):
+def sign_in_with_email_and_password(email, password, student: bool):
     try:
         user = auth.get_user_by_email(email)
         if user:
@@ -37,7 +39,9 @@ def sign_in_with_email_and_password(email, password):
                     password=password
                 )
                 print('Successfully signed in user:', signed_in_user.uid)
-                return signed_in_user.uid
+                if student:
+                    return fb_s.Initializing().student_doc.document(signed_in_user.uid)
+
         else:
             print('User not found')
             return None
@@ -49,7 +53,7 @@ def sign_in_with_email_and_password(email, password):
         return None
 
 
-s1 = create_user('puravp@uci.edu', 'testpass', "puravp", 'Purav Patel')
-data = s1.get_doc().get().to_dict()
-print(data['name'])
+# s1 = create_user('puravp@uci.edu', 'testpass', "puravp", 'Purav Patel')
+# data = s1.get_doc().get().to_dict()
+# print(data['name'])
 # sign_in_with_email_and_password('puravp@uci.edu', 'testpass')

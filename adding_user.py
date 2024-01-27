@@ -51,23 +51,29 @@ class AddUser():
                     "name": name,
                     "student_id": student_id,
                     "email": email,
+                    "portfolio": "",
+                    "major": "",
+                    "year": 0,
+                    "research interest": "",
+                    "resume": "",
+                    "linkedin": "",
                 }
             )
     
-    def update_student_profile(self, major: str, year, portfolio: str, research_interest: str, resume: str, linkedin: str):
-        if self.student:
-            self.doc.set(
-                {
-                    "portfolio": portfolio,
-                    "major": major,
-                    "year": year,
-                    "research interest": research_interest,
-                    "resume": resume,
-                    "linkedin": linkedin,
-                }
-            )
+    # def update_student_profile(self, major: str, year, portfolio: str, research_interest: str, resume: str, linkedin: str):
+    #     if self.student:
+    #         self.doc.set(
+    #             {
+    #                 "portfolio": portfolio,
+    #                 "major": major,
+    #                 "year": year,
+    #                 "research interest": research_interest,
+    #                 "resume": resume,
+    #                 "linkedin": linkedin,
+    #             }
+    #         )
     
-    def init_advisors(self, advisor_id: str, department: str, publications: str, website: str):
+    def init_advisors(self, advisor_id: str, department: str, publications: str, website: str, position, aos):
         if self.student == False:
             self._doc = self.doc.advisor_doc.document(advisor_id)
             self._doc.set(
@@ -76,18 +82,20 @@ class AddUser():
                     "department": department,
                     "past publications": publications,
                     "website": website,
-                }
-            )
-    
-    def update_advisor_profile(self, advisor_id: str, position: str, aos: str):
-        if self.student == False:
-            self._doc = self.doc.advisor_doc.document(advisor_id)
-            self._doc.set(
-                {
                     "position": position,
                     "area of study": aos,
                 }
             )
+    
+    # def update_advisor_profile(self, advisor_id: str, position: str, aos: str):
+    #     if self.student == False:
+    #         self._doc = self.doc.advisor_doc.document(advisor_id)
+    #         self._doc.set(
+    #             {
+    #                 "position": position,
+    #                 "area of study": aos,
+    #             }
+    #         )
     
     def get_doc(self):
         return self.doc
