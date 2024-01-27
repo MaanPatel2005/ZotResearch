@@ -28,23 +28,21 @@ def create_user(email, password, ucinetid, displayName):
 
 def sign_in_with_email_and_password(email, password, student: bool):
     try:
+        # user = auth.get_user_by_email(email)
+        # if user:
+        #     # Attempt to sign in the user with email and password
         user = auth.get_user_by_email(email)
-        if user:
-            # Attempt to sign in the user with email and password
-            user = auth.get_user_by_email(email)
-            if user:
-                signed_in_user = auth.update_user(
-                    user.uid,
-                    email=email,
-                    password=password
-                )
-                print('Successfully signed in user:', signed_in_user.uid)
-                if student:
-                    return fb_s.Initializing().student_doc.document(signed_in_user.uid)
+        signed_in_user = auth.update_user(
+            user.uid,
+            email=email,
+            password=password
+        )
+        print('Successfully signed in user:', signed_in_user.uid)
+        if student:
+            return fb_s.Initializing().student_doc.document(signed_in_user.uid)
 
         else:
-            print('User not found')
-            return None
+            return fb_s.Initializing().advisor_doc.document(signed_in_user.uid)
     except auth.UserNotFoundError:
         print('User not found')
         return None
@@ -54,6 +52,6 @@ def sign_in_with_email_and_password(email, password, student: bool):
 
 
 # s1 = create_user('puravp@uci.edu', 'testpass', "puravp", 'Purav Patel')
-# data = s1.get_doc().get().to_dict()
-# print(data['name'])
-# sign_in_with_email_and_password('puravp@uci.edu', 'testpass')
+# # data = s1.get_doc().get().to_dict()
+# # print(data['name'])
+# sign_in_with_email_and_password('puravp@uci.edu', 'Testpass', True)

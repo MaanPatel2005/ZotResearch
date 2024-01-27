@@ -1,28 +1,26 @@
 import React, { useState } from 'react';
 import './login.css'
+import axios from 'axios';
+
 
 const LoginPage = () => {
   // State variables to store username, password, and error message
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [userID, setUserID] = useState('');
 
   // Function to handle form submission
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-
-    // Predefined constants for authentication
-    const validUsername = 'puravp@uci.edu';
-    const validPassword = 'MaanIsCute';
-
-    // Check if entered username and password are valid
-    if (username === validUsername && password === validPassword) {
-      // Successful login
-      console.log('Login successful!');
-      setError('');
-    } else {
-      // Failed login
-      setError('Invalid username or password. Try again.');
+    try {
+        const response = await axios.post('http://localhost:5000/api/student_login/', { username, password });
+        console.log(response.data);
+        setUserID(response.data);
+         // Store response data in state
+    } catch (error) {
+        console.error('Error logging in:', error);
+        setError('Invalid username or password', error);
     }
 
     // Reset form fields after submission

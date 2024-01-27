@@ -54,9 +54,11 @@ class AddUser():
                     "portfolio": "",
                     "major": "",
                     "year": 0,
-                    "research interest": "",
+                    "description": "",
+                    "research": "",
                     "resume": "",
                     "linkedin": "",
+                    "degree": "",
                 }
             )
     

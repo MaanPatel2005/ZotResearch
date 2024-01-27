@@ -2,9 +2,12 @@ from flask import Flask, request, jsonify
 import firebase_auth
 import opportunities
 import profiles
+from flask_cors import CORS
+
+
 # Initialize Flask application
 app = Flask(__name__)
-
+CORS(app)
 # # Define API endpoints
 # @app.route('/api/hello', methods=['GET'])
 # def hello():
@@ -31,10 +34,13 @@ def create_user():
 @app.route('/api/student_login/', methods = ['POST'])
 def student_login():
     data = request.json
-    email = data.get('email')
+    email = data.get('username')
     password = data.get('password')
-    user = firebase_auth.sign_in_with_email_and_password(email, password, True)
-    return jsonify({'uid': user.get_doc().get().to_dict()['student_id']})
+    print(email, password)
+    user = firebase_auth.sign_in_with_email_and_password(str(email), str(password), True)
+    response = jsonify({'uid': user.get().to_dict()['student_id']})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @app.route('/api/prof_login/', methods = ['POST'])
 def prof_login():
@@ -44,7 +50,7 @@ def prof_login():
     user = firebase_auth.sign_in_with_email_and_password(email, password, False)
     return jsonify({'uid': user.get_doc().get().to_dict()['UCI NetID']})
 
-@app.route('/api/create_opportunity', methods = ['POST'])
+@app.route('/api/create_opportunity/', methods = ['POST'])
 def create_opportunity():
     data = request.json
     title = data.get('title')
@@ -53,29 +59,33 @@ def create_opportunity():
     opportunities.create_opportunity(title, desc, uid)
     return '', 204
 
-@app.route('/api/get_opportunities', methods = ['POST'])
+@app.route('/api/get_opportunities/', methods = ['POST'])
 def get_all_opportunities():
     return jsonify(opportunities.get_all_opportunities())
 
-@app.route('/api/update_student_profile', methods = ['POST'])
+@app.route('/api/update_student_profile/', methods = ['POST'])
 def update_student_profile():
     data = request.json()
     portfolio = data.get('portfolio')
     major = data.get('major')
     year = data.get('major')
-    research_interest = data.get('research interest')
+    research = data.get('research')
     resume = data.get('resume')
     linkedin = data.get('linkedin')
     uid = data.get('uid')
-    profiles.update_student_profile(uid, major, year, portfolio, research_interest, resume, linkedin)
+    description = data.get('desc')
+    degree = data.get('degree')
+    profiles.update_student_profile(uid, major, year, portfolio, research, resume, linkedin, description, degree)
     return '', 204
 
-@app.route('/api/get_student_profile', methods = ['POST'])
+@app.route('/api/get_student_profile/', methods = ['POST'])
 def get_student_profile():
     data = request.json
     return jsonify(profiles.get_student_profile(data.get('uid')))
+    # return jsonify((data.get('uid')))
 
-@app.route('/api/get_prof_opps', methods = ['POST'])
+
+@app.route('/api/get_prof_opps/', methods = ['POST'])
 def get_opp_by_prof():
     data = request.json()
     return jsonify(opportunities.get_opp_by_prof(data.get('uid')))

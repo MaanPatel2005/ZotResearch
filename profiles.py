@@ -5,16 +5,18 @@ import adding_user
 import firebase_setup as fb_s
 from firebase_admin import firestore
 
-def update_student_profile(uid, major: str, year, portfolio: str, research_interest: str, resume: str, linkedin: str):
+def update_student_profile(uid, major: str, year, portfolio: str, research_interest: str, resume: str, linkedin: str, desc, degree):
     user_doc = fb_s.Initializing().student_doc.document(uid)
     user_doc.update(
         {
             "portfolio": portfolio,
             "major": major,
             "year": year,
-            "research interest": research_interest,
+            "research interest": research,
             "resume": resume,
             "linkedin": linkedin,
+            "description": desc,
+            "degree": degree
         }
     )
 

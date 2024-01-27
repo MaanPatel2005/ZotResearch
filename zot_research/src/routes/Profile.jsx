@@ -1,10 +1,29 @@
 // Profile.js
 
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import profpic from '../assets/profile_pic.jpeg';
 import './Profile.css';
+import axios from 'axios';
 
-function Profile() {
+const Profile = () => {
+  const [data, setData] = useState({uid: 'puravp'});
+  useEffect(() => {
+    handleProfile();
+  }, []);
+
+  // Function to handle form submission
+  const handleProfile = async (e) => {
+    // e.preventDefault();
+    try {
+        const response = await axios.post('http://localhost:5000/api/get_student_profile/', {uid: "puravp"});
+        console.log(response.data);
+        setData(response.data);
+         // Store response data in state
+    } catch (error) {
+        console.error('Error logging in:', error);
+    }
+  };
+
   return (
     <div id="root">
       <div className='box' id="row1">
@@ -16,15 +35,15 @@ function Profile() {
         <div class="inner-box">
           <div className="text">
             <p className="Name">
-              Name: _____
+              Name: {data.name}
             </p>
             <p className="Other_Details">
               <br />
-              University: _____
+              University: University of California, Irvine
               <br />
-              Major: _____
+              Major: {data.major}
               <br />
-              Degree: _____
+              Degree: {data.degree}
               <br />
             </p>
           </div>
@@ -37,7 +56,7 @@ function Profile() {
             Description
           </p>
           <p className="Description_Text">
-            Insert Text Here
+            {data.description}
           </p>
         </div>
         <div class="research-interest">
@@ -45,14 +64,14 @@ function Profile() {
             Research Interests
           </p>
           <p className="select_keywords">
-            Select Keywords
+            {data.research}
           </p>
         </div>
       </div>
       </div>
       <div className="box" id="box3">
         <div className="embed">
-          <iframe src="https://docs.google.com/document/d/1JymkivBFogSjGwIEufmdmFrW2YOxofThw4iV2hac8Fo/edit?usp=sharing" height="700" width="700"></iframe>
+          <iframe src={data.resume} height="700" width="700"></iframe>
         </div>
       </div>
       <button className="editbutton">Edit</button>
