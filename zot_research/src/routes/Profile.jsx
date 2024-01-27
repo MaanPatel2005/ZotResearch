@@ -40,19 +40,20 @@ function Profile() {
             Insert Text Here
           </p>
         </div>
+        <div class="research-interest">
+          <p className="keywords_list">
+            Research Interests
+          </p>
+          <p className="select_keywords">
+            Select Keywords
+          </p>
+        </div>
       </div>
       </div>
       <div className="box" id="box3">
-      <div className='box' id="row2">
-
-      </div>
         <div className="embed">
           <iframe src="https://docs.google.com/document/d/1JymkivBFogSjGwIEufmdmFrW2YOxofThw4iV2hac8Fo/edit?usp=sharing" height="700" width="600"></iframe>
         </div>
-      </div>
-
-      <div className="research">
-        <p>Research Interests: (Enter research interests here) </p>
       </div>
 
     </div>

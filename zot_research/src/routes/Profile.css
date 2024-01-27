@@ -10,16 +10,8 @@
   #row1 {
     position:absolute;
     padding: 10px;
-    width: 1200px;
+    width: 1520px;
     height: 50px;
-    background-color: rgb(14, 14, 14)
-
-  }
-  #row2 {
-    position:absolute;
-    padding: 10px;
-    width: 1200px;
-    height: 40px;
     background-color: rgb(14, 14, 14)
 
   }
@@ -36,6 +28,36 @@
     width: 800px;
   }
 
+  .research-interest {
+    position:absolute;
+    top: 63%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 70px;
+    background-color: #121212;
+    border-radius: 15px;
+  }
+
+  .keywords_list {
+    position:absolute;
+    top: 5%;
+    font-weight: bold;
+    left: 3%;
+    display: flex;
+    font-size: 20px;
+    color: rgb(234, 237, 248);
+  }
+
+  .select_keywords {
+    position:absolute;
+    top: 50%;
+    font-weight: bold;
+    left: 3%;
+    display: flex;
+    font-size: 10px;
+    color: rgb(234, 237, 248);
+  }
   #box2 {
     padding: 8px;
     width: 800px;
@@ -74,14 +96,7 @@
     background-color: #121212;
     border-radius: 15px;
   }
-  .interests {
-    position: absolute;
-    text-align: left;
-    top: 40%;
-    left: 30%;
-    color: rgb(227, 231, 249);
-  }
-
+  
   .research:hover {
     filter: drop-shadow(0 0 1em hsla(0, 0%, 100%, 0.667));
   }
