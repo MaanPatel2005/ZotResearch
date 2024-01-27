@@ -4,6 +4,16 @@ import './AddPost.css'
 function AddPost() {
   const [inputValue, setInputValue] = useState('');
   const [result, setResult] = useState('');
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleButtonClick = () => {
+    // Process the input value and update the variable (result in this case)
+    setResult(`Input value is: ${inputValue}`);
+  };
+
     return (
       <>
       <div>
@@ -12,18 +22,18 @@ function AddPost() {
         </div>
         <form class = "post">
           <label>
-            <p>Title:</p>
-            <input type="text" id = "title" name="title" />
+            <p>Title: </p>
+            <input type="text" value = {inputValue} onChange={handleInputChange} id = "title" name="title" />
           </label>
           <br/>
           <br/>
           <label>
             <p>Description:</p>
-            <input type="text" id = "description" name="description" />
+            <input type="text" value = {inputValue} onChange={handleInputChange} id = "description" name="description" />
           </label>
           <p>Contact Information: mitalim@uci.edu</p>
-          <button>Add</button>
-          
+          <button onClick={handleButtonClick}>Add</button>
+          <p>{result}</p>
         </form>
 
         </div>
