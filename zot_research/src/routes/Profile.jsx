@@ -8,7 +8,8 @@ function Profile() {
   return (
     <div id="root">
       <div className='box' id="row1">
-
+        <p className="Name">
+        </p>
       </div>
       <div className="box" id="box1">
       <div className="box" id="box2">
@@ -52,7 +53,7 @@ function Profile() {
       </div>
       <div className="box" id="box3">
         <div className="embed">
-          <iframe src="https://docs.google.com/document/d/1JymkivBFogSjGwIEufmdmFrW2YOxofThw4iV2hac8Fo/edit?usp=sharing" height="700" width="600"></iframe>
+          <iframe src="https://docs.google.com/document/d/1JymkivBFogSjGwIEufmdmFrW2YOxofThw4iV2hac8Fo/edit?usp=sharing" height="700" width="700"></iframe>
         </div>
       </div>
 
