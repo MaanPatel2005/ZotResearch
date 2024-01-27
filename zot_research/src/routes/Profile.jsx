@@ -27,7 +27,6 @@ function Profile() {
               Degree: _____
               <br />
             </p>
-              <button className="editbutton">Edit</button>
           </div>
           <div className="imagecrop">
             <img src={profpic} className="profile_pic.jpeg" alt="Profile Picture" />
@@ -56,8 +55,9 @@ function Profile() {
           <iframe src="https://docs.google.com/document/d/1JymkivBFogSjGwIEufmdmFrW2YOxofThw4iV2hac8Fo/edit?usp=sharing" height="700" width="700"></iframe>
         </div>
       </div>
-
+      <button className="editbutton">Edit</button>
     </div>
+    
   );
 }
 
