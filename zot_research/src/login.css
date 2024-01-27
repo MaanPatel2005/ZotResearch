@@ -1,0 +1,86 @@
+body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    display: flex;
+    justify-content: stretch; /* Center content horizontally */
+    align-items: stretch; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0;
+  }
+  
+  .login-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 50px; /* Adjust as needed */
+    font-size: 40px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    color: #000000;
+    font-size: 20px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: #fff;
+    position: relative;
+    left: 33%;
+    width: 200px;
+    height: 35px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #000000;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  div#root {
+    margin-top: 0px;
+    padding: 0px;
+    margin: 0;
+    background-color: #8528e2;
+    width: 100%; /* Ensure full width of the container */
+  }
+  
+  /* Additional styling for individual pages (adjust as needed) */
+  div#root > div {
+    margin-top: 15px;
+    padding: 0;
+    position: absolute;
+    top: 10%;
+    right: 30%;
+    border: 1px solid #8528e2;
+    background-color: #8528e2;
+  }
+  
