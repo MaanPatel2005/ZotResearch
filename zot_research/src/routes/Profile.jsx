@@ -33,8 +33,11 @@ function Profile() {
           </div>
         </div>
         <div class="also-inner-box">
-          <p className="Name">
+          <p className="Description">
             Description
+          </p>
+          <p className="Description_Text">
+            Insert Text Here
           </p>
         </div>
       </div>

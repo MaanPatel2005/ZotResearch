@@ -67,9 +67,9 @@
   .also-inner-box {
     position:absolute;
     top: 35%;
-    right: 20%;
+    right: 32%;
     transform: translate(-50%, -50%);
-    width: 450px;
+    width: 400px;
     height: 300px;
     background-color: #121212;
     border-radius: 15px;
@@ -113,7 +113,25 @@
     font-size: 25px;
     color: rgb(234, 237, 248);
  }
- 
+
+ .Description {
+    position:absolute;
+    top: 5%;
+    font-weight: bold;
+    left: 5%;
+    display: flex;
+    font-size: 25px;
+    color: rgb(234, 237, 248);
+ }
+ .Description_Text {
+  position:absolute;
+  top: 20%;
+  font-weight: normal;
+  left: 5%;
+  display: flex;
+  font-size: 15px;
+  color: rgb(234, 237, 248);
+}
  .Other_Details {
     position:absolute;
     top: 60%;
