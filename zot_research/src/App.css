@@ -1,17 +1,16 @@
 /* app.css */
 
-/* Reset some default browser styles */
-body, h1, h2, h3, p, ul, li {
-  margin: 0;
-  padding: 0;
-}
+
 
 body {
   font-family: 'Arial', sans-serif;
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content:stretch; /* Center content horizontally */
+  align-items:stretch; /* Center content vertically */
   height: 100vh; /* Full viewport height */
+
+  margin: 0; /* Remove default margin */
+  padding: 0;
 }
 
 /* Navbar styles */
@@ -21,7 +20,7 @@ ul {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 15px;
 }
 
 li {
@@ -63,17 +62,17 @@ li:hover > ul.dropdown-menu {
 
 /* Main content styles */
 div#root {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #9b74ce;
+  margin-top: 0px;
+  padding: 0px;
+  margin: 0;
+  background-color: #434047;
   width: 100%; /* Ensure full width of the container */
 }
 
 /* Additional styling for individual pages (adjust as needed) */
 div#root > div {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+  margin-top: 15px;
+  padding: 1px;
+  border: 1px solid #8528e2;
+  background-color: #8528e2;
 }
