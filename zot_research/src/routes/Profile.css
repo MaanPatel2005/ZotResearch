@@ -1,0 +1,95 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0rem;
+    text-align: center;
+  }
+
+  .embed {
+    position: absolute;
+    text-align: left;
+    top: 45%;
+    left: 20%;
+  }
+
+  .research {
+    position: absolute;
+    text-align: left;
+    top: 40%;
+    left: 20%;
+    color: rgb(227, 231, 249);
+  }
+
+  .interests {
+    position: absolute;
+    text-align: left;
+    top: 40%;
+    left: 30%;
+    color: rgb(227, 231, 249);
+  }
+
+  .research:hover {
+    filter: drop-shadow(0 0 1em hsla(0, 0%, 100%, 0.667));
+  }
+ 
+  .editbutton {
+    font-size: 10px;
+    padding: "0px";
+    height: "0px";
+    position: absolute;
+    top: 100%;
+    text-align: left;
+  }
+ 
+ 
+  .profheading {
+    position: absolute;
+    top:8%;
+    left:42%;
+    display: flex;
+    color: rgb(164, 179, 248);
+ }
+ 
+ 
+ .proftext {
+    position:absolute;
+    top: 24%;
+    left: 30%;
+    display: flex;
+    text-align: left;
+    color: rgb(227, 231, 249);
+ }
+ 
+ 
+  .imagecrop {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position:absolute;
+    top:25%;
+    left:20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+ 
+  .imagecrop img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+   .profpic {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+ 
