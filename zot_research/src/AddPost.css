@@ -13,11 +13,14 @@
 
   .description {
     height: 40px;
-    width: 200%;
+    width: 400%;
+    border-radius: 10px;
   }
 
   .title {
     height: 20px;
+    width: 400%;
+    border-radius: 7px;
   }
 
   .heading {
