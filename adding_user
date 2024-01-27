@@ -1,0 +1,45 @@
+import firebase_setup as fb_s
+
+class AddUser():
+    def __init__(self, user: str):
+        self.student = False
+        self.student == True if user == 'student' else False
+        self.doc = fb_s.Initializing()
+    
+    def init_student(self, name: str, major: str, year: int):
+        doc = self.doc.student_doc.document(name)
+        doc.set(
+            {
+                "name": name,
+                "major": major,
+                "year": year,
+            }
+        )
+    
+    def update_user_profile(self, name, portfolio: str, research_interest, email: str):
+        doc = self.doc.student_doc.document(name)
+        doc.set(
+            {
+                "portfolio": portfolio,
+                "email": email,
+                "research interest": research_interest,
+            }
+        )
+    
+    def init_advisors(self, name: str, study: str, publications: str, website: str):
+        doc = self.doc.advisor_doc.document(name)
+        doc.set(
+            {
+                "name": name,
+                "study": study,
+                "past publications": publications,
+                "website": website,
+            }
+        )
+
+
+
+if __name__ == '__main__':
+    au = AddUser('student')
+    au.init_student('Maan Patel', 'Computer Science', 1)
+au.init_advisors('Professor Thornton', 'Computer Science', 'https://ics.uci.edu/~thornton/ics33', 'https://ics.uci.edu/~thornton')
