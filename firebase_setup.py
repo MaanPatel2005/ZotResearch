@@ -22,6 +22,6 @@ doc_ref2.set (
     {
         "name": "Irene Gassko",
         "study": "Computer Science Logic",
-        "current_project": "6D Homewor"
+        "current_project": "6D Homework"
     } 
 )
