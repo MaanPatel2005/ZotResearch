@@ -1,24 +1,79 @@
-#root {
-    margin: 0 auto;
-    padding: 0rem;
-    text-align: center;
-  }
+
 
   .embed {
-    position: absolute;
-    text-align: left;
-    top: 45%;
-    left: 20%;
+    position:relative;
+    text-align:justify;
+    display: flex;
+    top: 10%;
+    right: 0%
   }
+  #row1 {
+    position:absolute;
+    padding: 10px;
+    width: 1200px;
+    height: 50px;
+    background-color: rgb(14, 14, 14)
 
+  }
+  #row2 {
+    position:absolute;
+    padding: 10px;
+    width: 1200px;
+    height: 40px;
+    background-color: rgb(14, 14, 14)
+
+  }
   .research {
     position: absolute;
     text-align: left;
-    top: 40%;
+    top: 100%;
     left: 20%;
     color: rgb(227, 231, 249);
   }
 
+  #box1 {
+    padding: 10px;
+    width: 800px;
+  }
+
+  #box2 {
+    padding: 8px;
+    width: 800px;
+    height: 200px;
+    display: flex;
+    left: 20%;
+
+
+  }
+
+  #box3 {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .inner-box {
+    position:absolute;
+    top: 35%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 300px;
+    background-color: #121212;
+    border-radius: 15px;
+  }
+  
+  .also-inner-box {
+    position:absolute;
+    top: 35%;
+    right: 20%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 300px;
+    background-color: #121212;
+    border-radius: 15px;
+  }
   .interests {
     position: absolute;
     text-align: left;
@@ -46,37 +101,47 @@
     top:8%;
     left:42%;
     display: flex;
-    color: rgb(164, 179, 248);
+    color: rgb(218, 221, 233);
  }
  
  
- .proftext {
+ .Name {
     position:absolute;
-    top: 24%;
+    top: 50%;
     left: 30%;
     display: flex;
-    text-align: left;
-    color: rgb(227, 231, 249);
+    font-size: 25px;
+    color: rgb(234, 237, 248);
  }
  
- 
+ .Other_Details {
+    position:absolute;
+    top: 60%;
+    left: 30%;
+    display: flex;
+    font-size: 15px;
+    color: rgb(234, 237, 248);
+ }
   .imagecrop {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
     position:absolute;
-    top:25%;
-    left:20%;
+    bottom: 55%;
+    left:30%;
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
- 
+
+  .text {
+    width: 100px;
+    height: 100px;
+  }
  
   .imagecrop img {
     width: 100%;
     height: auto;
+    position: relative;
     display: block;
   }
    .profpic {
