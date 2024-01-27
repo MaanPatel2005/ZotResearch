@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import './AddPost.css'
 
 function AddPost() {
+  const [inputValue, setInputValue] = useState('');
+  const [result, setResult] = useState('');
     return (
       <>
       <div>
