@@ -70,9 +70,4 @@ div#root {
 }
 
 /* Additional styling for individual pages (adjust as needed) */
-div#root > div {
-  margin-top: 15px;
-  padding: 1px;
-  border: 1px solid #8528e2;
-  background-color: #8528e2;
-}
+

@@ -1,38 +1,116 @@
-#root {
-    margin: 0 auto;
-    padding: 0rem;
-    text-align: center;
-  }
 
   .embed {
-    position: absolute;
-    text-align: left;
-    top: 45%;
-    left: 20%;
+    position:absolute;
+    text-align:justify;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    top: 10%;
+    right: 5%;
+    width: 35vw;
   }
+  .embed iframe {
+    width: 100%;
+    height: 100%;
+  
+  #root {
+    overflow-x: hidden;
+  }
+  }
+  #row1 {
+    position:absolute;
+    width: 89vw ;
+    height: 5vh;
+    background-color: rgb(14, 14, 14)
 
+  }
   .research {
     position: absolute;
     text-align: left;
-    top: 40%;
+    top: 100%;
     left: 20%;
     color: rgb(227, 231, 249);
   }
 
-  .interests {
-    position: absolute;
-    text-align: left;
-    top: 40%;
-    left: 30%;
-    color: rgb(227, 231, 249);
+  #box1 {
+    width: 50vw;
   }
 
+  .research-interest {
+    position:absolute;
+    top: 63%;
+    left: 34.5%;
+    transform: translate(-50%, -50%);
+    width: 39.2vw;
+    height: 8vh;
+    background-color: #121212;
+    border-radius: 15px;
+  }
+
+  .keywords_list {
+    position:absolute;
+    top: 5%;
+    font-weight: bold;
+    left: 3%;
+    display: flex;
+    font-size: 1.2vw;
+    color: rgb(234, 237, 248);
+  }
+
+  .select_keywords {
+    position:absolute;
+    top: 50%;
+    font-weight: bold;
+    left: 3%;
+    display: flex;
+    font-size: 0.6vw;
+    color: rgb(234, 237, 248);
+  }
+  #box2 {
+    width: 80vw;
+    height: 200px;
+    display: flex;
+    left: 20%;
+
+
+  }
+
+  #box3 {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .inner-box {
+    position:absolute;
+    top: 35%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    width: 14vw;
+    height: 33vh;
+    background-color: #121212;
+    border-radius: 1vw;
+    overflow-x: hidden;
+  }
+  
+  .also-inner-box {
+    position:absolute;
+    top: 35%;
+    right: 35%;
+    transform: translate(-50%, -50%);
+    width: 22vw;
+    height: 33vh;
+    background-color: #121212;
+    border-radius: 1vw;
+  }
+  
   .research:hover {
     filter: drop-shadow(0 0 1em hsla(0, 0%, 100%, 0.667));
   }
  
   .editbutton {
-    font-size: 10px;
+    font-size: 0.5vw;
     padding: "0px";
     height: "0px";
     position: absolute;
@@ -46,37 +124,66 @@
     top:8%;
     left:42%;
     display: flex;
-    color: rgb(164, 179, 248);
+    color: rgb(218, 221, 233);
  }
  
  
- .proftext {
+ .Name {
     position:absolute;
-    top: 24%;
+    top: 50%;
     left: 30%;
     display: flex;
-    text-align: left;
-    color: rgb(227, 231, 249);
+    font-size: 1.5vw;
+    color: rgb(234, 237, 248);
  }
- 
- 
+
+ .Description {
+    position:absolute;
+    top: 5%;
+    font-weight: bold;
+    left: 5%;
+    display: flex;
+    font-size: 2vw;
+    color: rgb(234, 237, 248);
+ }
+ .Description_Text {
+  position:absolute;
+  top: 25%;
+  font-weight: normal;
+  left: 5%;
+  display: flex;
+  font-size: 1vw;
+  color: rgb(234, 237, 248);
+}
+ .Other_Details {
+    position:absolute;
+    top: 60%;
+    left: 30%;
+    display: flex;
+    font-size: 0.8vw;
+    color: rgb(234, 237, 248);
+ }
   .imagecrop {
-    width: 100px;
-    height: 100px;
+    width:auto;
+    height:12vh;
     border-radius: 50%;
     overflow: hidden;
     position:absolute;
-    top:25%;
-    left:20%;
+    bottom: 55%;
+    left:30%;
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
- 
+
+  .text {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+  }
  
   .imagecrop img {
     width: 100%;
     height: auto;
+    position: relative;
     display: block;
   }
    .profpic {

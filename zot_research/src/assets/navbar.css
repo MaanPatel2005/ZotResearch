@@ -7,26 +7,28 @@ body, h1, h2, h3, p, ul, li {
 
 .navbar {
   background-color: #181719;
-  padding: 40px;
+  padding: 2vw;
   position: flex;
   flex-direction: column;
   border-radius: 10px;
+  width: 7vw;
 }
 
 .navbar ul li:hover {
-  text-shadow: 2px 8px 8px #8528e2;
+  text-shadow: 0.5vh 1vh 1vh #8528e2;
 }
 
 .navbar ul {
   list-style-type: none;
-  padding: 100;
+  padding: 2vh;
   display: flex;
   flex-direction: column
+  
 }
 
 li {
-  margin-right: 15px;
-}
+  font-size: 1vw;
+} 
 
 a {
   text-decoration: none;
@@ -54,7 +56,7 @@ ul.dropdown-menu {
   top: 100%;
   left: 0;
   background-color: #a61212;
-  padding: 100px;
+  padding: 2vw;
 }
 
 li:hover > ul.dropdown-menu {
