@@ -3,7 +3,7 @@
 
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   display: flex;
   justify-content:stretch; /* Center content horizontally */
   align-items:stretch; /* Center content vertically */
