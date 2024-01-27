@@ -12,11 +12,11 @@ function Profile() {
            </div>
          <a>
            <p className="proftext">
-               Mitali Mittal
+               Enter Text Here
                <br/>
-               Computer Science
+               Enter Description Here
                <br/>
-               Class of 2027
+               Enter Class/Year Here
                <br/>
                <button class = "editbutton">Edit</button>
            </p>
