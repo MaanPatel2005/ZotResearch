@@ -2,6 +2,7 @@ import Navbar from './assets/Navbar';
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from './routes/Profile';
+import React from 'react';
 
 const App = () => {
   const userIsAdmin = true;
