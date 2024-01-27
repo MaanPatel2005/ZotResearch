@@ -1,10 +1,10 @@
-import React from 'react'
-import profpic from './assets/IMG_0326.jpg'
+import React, {useState} from 'react'
 import './AddPost.css'
 
 function AddPost() {
     return (
       <>
+      <div>
         <div>
         <h1 class = "heading">New Opportunity</h1>
         </div>
@@ -20,11 +20,12 @@ function AddPost() {
             <input type="text" id = "description" name="description" />
           </label>
           <p>Contact Information: mitalim@uci.edu</p>
-          <input type="submit" value="Add" />
+          <button>Add</button>
           
         </form>
+
+        </div>
       </>
     )
- }
- 
+}
  export default AddPost
