@@ -1,0 +1,29 @@
+#root {
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .post {
+    position: absolute;
+    text-align: left;
+    top: 22%;
+    left: 20%;
+  }
+
+  .description {
+    height: 40px;
+    width: 400%;
+    border-radius: 10px;
+  }
+
+  .title {
+    height: 20px;
+    width: 400%;
+    border-radius: 7px;
+  }
+
+  .heading {
+    margin-top: -75%;
+    text-align: center;
+  }
