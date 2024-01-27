@@ -3,6 +3,7 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from './routes/Profile';
 import React from 'react';
+import AddPost from './routes/Add_Post'
 
 const App = () => {
   const userIsAdmin = true;
@@ -15,7 +16,7 @@ const App = () => {
         <Route path="/Dashboard" element={<div></div>} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Messaging" element={<div></div>} />
-        <Route path="/Post" element={<div></div>} />
+        <Route path="/Post" element={<AddPost />} />
       </Routes>
     </Router>
   );
