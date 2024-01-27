@@ -4,7 +4,33 @@
     padding: 2rem;
     text-align: center;
   }
- 
+
+  .embed {
+    position: absolute;
+    text-align: left;
+    top: 45%;
+    left: 20%;
+  }
+
+  .research {
+    position: absolute;
+    text-align: left;
+    top: 40%;
+    left: 20%;
+    color: rgb(227, 231, 249);
+  }
+
+  .interests {
+    position: absolute;
+    text-align: left;
+    top: 40%;
+    left: 30%;
+    color: rgb(227, 231, 249);
+  }
+
+  .research:hover {
+    filter: drop-shadow(0 0 1em hsla(0, 0%, 100%, 0.667));
+  }
  
   .editbutton {
     font-size: 10px;

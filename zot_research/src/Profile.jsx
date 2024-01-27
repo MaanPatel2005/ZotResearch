@@ -1,10 +1,8 @@
-import {useState} from 'react'
+import React from 'react'
 import profpic from './assets/IMG_0326.jpg'
 import './Profile.css'
 
-
 function Profile() {
- const [count, setCount] = useState(0)
    return (
      <>
        <div>
@@ -24,9 +22,19 @@ function Profile() {
            </p>
          </a>
        </div>
+
+       <div  class = "research"> 
+        <p>Research Interests: (Enter research interests here) </p>
+       </div>
+
+       <div className="embed">
+      <p>Resume:</p>
+      <iframe src="https://docs.google.com/document/d/1JymkivBFogSjGwIEufmdmFrW2YOxofThw4iV2hac8Fo/edit?usp=sharing" height="400" width="400"></iframe>
+      </div>
+      
+    
      </>
    )
 }
-
 
 export default Profile
