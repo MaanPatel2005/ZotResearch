@@ -22,16 +22,16 @@ function AddPost() {
         </div>
         <form class = "post">
           <label>
-            <p>Title: </p>
-            <input type="text" value = {inputValue.title} onChange={handleInputChange} id = "title" name="title" />
+            <p>Title: &nbsp;
+            <input class = "title" type="text" value = {inputValue.title} onChange={handleInputChange} id = "title" name="title" />
+            </p>
           </label>
-          <br/>
-          <br/>
           <label>
-            <p>Description:</p>
-            <input type="text" value = {inputValue.description} onChange={handleInputChange} id = "description" name="description" />
+            <p>Description: &nbsp;
+            <input class = "description" type="text" value = {inputValue.description} onChange={handleInputChange} id = "description" name="description" />
+            </p>
           </label>
-          <p>Contact Information: mitalim@uci.edu</p>
+          <p>Contact Information: (email)</p>
           <button onClick={handleButtonClick}>Add</button>
           <p>{result}</p>
         </form>

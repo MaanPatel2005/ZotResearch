@@ -12,11 +12,12 @@
   }
 
   .description {
-
+    height: 40px;
+    width: 200%;
   }
 
   .title {
-    
+    height: 20px;
   }
 
   .heading {
