@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './AddPost.css'
 
 function AddPost() {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState({ title: "", description: "No description given" });
   const [result, setResult] = useState('');
 
   const handleInputChange = (event) => {
@@ -11,7 +11,7 @@ function AddPost() {
 
   const handleButtonClick = () => {
     // Process the input value and update the variable (result in this case)
-    setResult(`Input value is: ${inputValue}`);
+    setResult(`Input value is: ${inputValue.title}`);
   };
 
     return (
