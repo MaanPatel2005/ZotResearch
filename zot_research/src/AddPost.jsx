@@ -2,8 +2,9 @@ import React, {useState} from 'react'
 import './AddPost.css'
 
 function AddPost() {
-  const [inputValue, setInputValue] = useState({ title: "", description: "No description given" });
-  const [result, setResult] = useState('');
+  const [inputValue, setInputValue] = useState("");
+  const [title, setTitle] = useState("");
+  const [result, setResult] = useState("''");
 
   const handleInputChange = (event) => {
     setInputValue(event);
@@ -23,7 +24,7 @@ function AddPost() {
         <form class = "post">
           <label>
             <p>Title: &nbsp;
-            <input class = "title" type="text" value = {inputValue.title} onChange={handleInputChange} id = "title" name="title" />
+            <input class = "title" type="text" value = {inputValue.title} onChange={(e) => {setTitle(e.target.value)}} id = "title" name="title" />
             </p>
           </label>
           <label>
