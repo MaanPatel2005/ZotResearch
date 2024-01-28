@@ -8,11 +8,7 @@ import LoginPage from './login.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-<<<<<<< Updated upstream
-    <LoginPage />
-=======
     <Login />
     <App />
->>>>>>> Stashed changes
   </React.StrictMode>,
 );
