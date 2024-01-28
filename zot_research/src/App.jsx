@@ -10,7 +10,7 @@ import CreateProfile from './routes/CreateProfile';
 import Dashboard from './routes/Dashboard';
 import ViewPost from './routes/ViewPosts';
 import ApplicantProfile from './routes/ApplicantProfile'
-
+ 
 const App = () => {
   const userIsAdmin = true; // Replace with your actual logic
 
