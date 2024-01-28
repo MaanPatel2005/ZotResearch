@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Add_Post.css';
+import autosize from 'autosize';
+
 
 function AddPost() {
   const [formData, setFormData] = useState({
@@ -29,12 +31,16 @@ function AddPost() {
     console.log(formData);
     setResult(`Entry submitted`);
   };
+  useEffect(() => {
+    // Apply autosize to all textareas when the component mounts
+    autosize(document.querySelectorAll('textarea'));
+  }, []);
 
   return (
     <>
       <div className="container mt-5">
         <div className="text-center">
-          <h1 className="heading">New Opportunity</h1>
+          <h1 className="heading">Create Posting</h1>
         </div>
         <form className="post-form">
           <div className="form-group">
@@ -44,16 +50,6 @@ function AddPost() {
               className="form-control"
               name="title"
               value={formData.title}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Description:</label>
-            <input
-              type="text"
-              className="form-control"
-              name="description"
-              value={formData.description}
               onChange={handleInputChange}
             />
           </div>
@@ -104,8 +100,7 @@ function AddPost() {
                 <input
                   type="date"
                   className="form-control"
-                  name="Posted
-                  Date"
+                  name="PostedDate"
                   value={formData.PostedDate}
                   onChange={handleInputChange}
                 />
@@ -122,6 +117,15 @@ function AddPost() {
               </div>
             </>
           )}
+          <div className="form-group description-group">
+            <label>Description:</label>
+            <textarea
+              className="form-control"
+              name="description"
+              value={formData.description}
+              onChange={handleInputChange}
+            />
+          </div>
           <button className="btn btn-success" onClick={handleButtonClick}>
             Add
           </button>

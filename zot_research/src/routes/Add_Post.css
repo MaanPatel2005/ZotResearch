@@ -1,53 +1,79 @@
 /* Add_Post.css */
+body {
+    font-family: 'Helvetica', sans-serif;
+    color: rgb(234, 237, 248); /* Set font color */
+}
 
 .container {
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-  }
-  
-  .heading {
+}
+
+.heading {
     margin-bottom: 2rem;
-  }
-  
-  .post-form {
-    max-width: 600px;
+    color: rgb(234, 237, 248);
+}
+
+.post-form {
+    max-width: 800px;
     margin: 0 auto;
-  }
-  
-  .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: rgb(234, 237, 248);
+}
+
+.form-group {
+    width: calc(48% - 1rem);
     margin-bottom: 1.5rem;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .form-group input,
-  .form-group textarea {
+    color: rgb(244, 244, 250);
+}
+
+.form-group.description-group {
+    width: 100%;
+}
+
+.form-group.description-group textarea {
     width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     border-radius: 0.25rem;
-    border: 1px solid #ced4da;
+    border: 1px solid #e9edf1;
     margin-bottom: 1rem;
-  }
-  
-  .form-check-input {
+    resize: none;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: rgb(246, 243, 243);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #0a0a0a;
+    margin-bottom: 1rem;
+    color: rgb(9, 9, 9);
+}
+    
+.form-check-input {
     margin-right: 0.5rem;
-  }
-  
-  .btn-success {
-    display: inline-block;
+}
+
+.btn-success {
+    width: 100%;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.5;
-    color: #fff;
+    color: #f7f2f2;
     background-color: #28a745;
     border-radius: 0.25rem;
     cursor: pointer;
-  }
-  
+}
