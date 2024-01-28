@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './CreatePost.css';
+import './CreateProfile.css';
 import autosize from 'autosize';
-
+import { auth, db } from "../firebase";
+import 'firebase/firestore';
+import { collection, setDoc, doc } from "firebase/firestore";
 
 function CreatePost() {
   const [formData, setFormData] = useState({
@@ -11,12 +13,10 @@ function CreatePost() {
     major: "",
     degree: "",
     isDeadline: false,
-    PostedDate: "",
-    Deadline: "",
   });
   const [result, setResult] = useState("");
 
-  const handleInputChange = async (e) => {
+  const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prevData => ({
       ...prevData,
@@ -24,13 +24,36 @@ function CreatePost() {
     }));
   };
 
-  const handleButtonClick = (e) => {
+  const handleButtonClick = async (e) => {
     e.preventDefault();
-    // Process the form data and update the variable (result in this case)
-    // For now, just displaying the form data in the console
-    console.log(formData);
-    setResult(`Entry submitted`);
+
+    try {
+      const user = auth.currentUser;
+      console.log(user)
+
+      if (user) {
+        console.log(user.uid);
+        const studentsRef = collection(db, 'students');
+
+        // Use setDoc to add the data to Firestore
+        await setDoc(doc(studentsRef, user.uid), {
+          name: formData.name,
+          description: formData.description,
+          university: formData.university,
+          major: formData.major,
+          degree: formData.degree,
+          isDeadline: formData.isDeadline,
+        });
+
+        setResult('Profile created successfully!');
+      } else {
+        setResult('User not authenticated.');
+      }
+    } catch (error) {
+      setResult(`Error: ${error.message}`);
+    }
   };
+
   useEffect(() => {
     // Apply autosize to all textareas when the component mounts
     autosize(document.querySelectorAll('textarea'));
@@ -48,8 +71,8 @@ function CreatePost() {
             <input
               type="text"
               className="form-control"
-              name="Name"
-              value={formData.Name}
+              name="name"
+              value={formData.name}
               onChange={handleInputChange}
             />
           </div>
@@ -92,6 +115,7 @@ function CreatePost() {
               onChange={handleInputChange}
             />
           </div>
+          {/* ... (other form fields) */}
           <button className="btn btn-success" onClick={handleButtonClick}>
             Add
           </button>

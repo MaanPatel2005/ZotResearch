@@ -6,7 +6,7 @@ import Profile from './routes/Profile';
 import React from 'react';
 import AddPost from './routes/Add_Post';
 import { Auth } from './auth';
-import CreateProfile from './routes/CreatePost';
+import CreateProfile from './routes/CreateProfile';
 
 
 const App = () => {

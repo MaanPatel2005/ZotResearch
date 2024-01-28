@@ -2,7 +2,7 @@ import { auth , googleProvider, db } from "./firebase";
 import { createUserWithEmailAndPassword,signInWithPopup, signOut } from "firebase/auth";
 import React, { useState, useEffect } from "react";
 import 'firebase/firestore';
-import { collection, setDoc, doc } from "firebase/firestore";
+import { collection, setDoc, doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 export const Auth = () => {
@@ -33,10 +33,27 @@ export const Auth = () => {
         if (userAuth) {
           console.log('pass user auth');
           const studentsRef = collection(db, "students");
-          await setDoc(doc(studentsRef, userAuth.uid), {
-            name: userAuth.displayName, email: userAuth.email, photo: userAuth.photoURL
+            const userDocRef = doc(studentsRef, userAuth.uid);
+
+            const docSnapshot = await getDoc(userDocRef);
+            if (docSnapshot.exists()) {
+              console.log('Document already exists, skipping...');
+              navigate("/Profile");
+            } else {
+              console.log('Document does not exist, creating...');
+              await setDoc(userDocRef, {
+                name: userAuth.displayName,
+                email: userAuth.email,
+                photo: userAuth.photoURL,
+                university: '',
+                major: '',
+                degree: '',
+                description: '',
+                research: '',
+                resume: '',
+            });
+            navigate("/CreateProfile");
           }
-          );
           // const snapshot = await userRef.get();
   
           // if (!snapshot.exists) {
@@ -48,7 +65,7 @@ export const Auth = () => {
   
   
           setUser(userAuth);
-          navigate("/CreateProfile"); // Replace with your desired route
+           // Replace with your desired route
 
         } else {
           setUser(null);
