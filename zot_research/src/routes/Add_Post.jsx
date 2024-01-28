@@ -16,7 +16,7 @@ function AddPost() {
   });
   const [result, setResult] = useState("");
 
-  const handleInputChange = (e) => {
+  const handleInputChange = async (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prevData => ({
       ...prevData,
