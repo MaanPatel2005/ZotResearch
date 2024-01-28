@@ -5,7 +5,9 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
 import './Dashboard.css';
 
+
 const ListComponent = () => {
+
   const [documents, setDocuments] = useState([]);
   const [selectedDocument, setSelectedDocument] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');

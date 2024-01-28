@@ -39,7 +39,7 @@ function CreatePost() {
 
         // Use setDoc to add the data to Firestore
         await setDoc(doc(studentsRef, user.uid), {
-          name: user.displayName, email: user.email, photo: user.photoURL, 
+          name: user.displayName, email: user.email, photo: user.photoURL, uid: user.uid,
           research: formData.research,
           description: formData.description,
           university: formData.university,
