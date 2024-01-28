@@ -29,7 +29,7 @@ function Profile() {
             </p>
           </div>
           <div className="imagecrop">
-            <img src={profpic} className="profile_pic.jpeg" alt="Profile Picture" />
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocJ3yTxxwyuMSUtqDfGx83icR39zSzsOb97neJ8QUDvZ=s96-c" className="profile-pic" alt="Profile Picture" />
           </div>
         </div>
         <div class="also-inner-box">
