@@ -1,4 +1,5 @@
 // Profile.js
+
 import { auth , googleProvider, db } from "../firebase";
 import React, { useEffect, useState } from 'react';
 // import React from 'react';
@@ -40,6 +41,7 @@ function Profile() {
       {userData ? (
         <div>
           <div className='box' id="row1">
+
           </div>
           <div className="box" id="box1">
             <div className="box" id="box2">
@@ -87,9 +89,11 @@ function Profile() {
           </div>
           <button className="editbutton">Edit</button>
         </div>
+
       ) : (
         <div>Loading...</div>
       )}
+
     </div>
   );
 }
