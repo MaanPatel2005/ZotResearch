@@ -8,10 +8,14 @@ function Navbar({ isAdmin }) {
     { name: 'Dashboard', path: '/dashboard' },
     { name: 'Profile', path: '/profile' },
     { name: 'Messaging', path: '/messaging' },
-    { name: 'Make Posting', path: '/post' },
+    { name: 'Make Posting', path: '/post' }
+  ];
+    const adminList2 = [
+      { name: 'Log Out', path: '/'}
   ];
 
   const navList = isAdmin ? adminList : [];
+  const navList2 = isAdmin ? adminList2 : [];
 
   return (
     <>
@@ -23,6 +27,15 @@ function Navbar({ isAdmin }) {
             </li>
           ))}
         </ul>
+        <ul className='log-out'>
+          {navList2.map((item) => (
+            <li key={item.path}>
+              <Link to={item.path}>{item.name}</Link>
+            </li>
+          ))}
+        </ul>
+    
+        
       </nav>
     </>
   );
