@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { collection, getDocs, query, where, doc, getDoc } from 'firebase/firestore';
 import { auth, db } from "../firebase";
 import { Link } from 'react-router-dom';
+// import './ViewPosts.css';
 
 
 const ListComponent = () => {
@@ -66,20 +67,21 @@ const ListComponent = () => {
 
 
   return (
-    <div className="lists-container">
-      <div className="documents-list">
-        <h2>List of Documents</h2>
+    <div className="lists-container" style={{overflow: 'hidden' }}>
+      <div className="documents-list" style={{overflowY: 'auto'}}>
+        <h1>My Posts</h1>
+        <h2 style={{ marginBottom: '20px' }}>Click Each Posting to View Applicants</h2>
         <ul>
           {documents.map(document => (
             <li key={document.documentId} onClick={() => handleDocumentClick(document.id)}>
               <p>Name: {document.title}</p>
-              <p>Description: {document.description}</p>
+              <p style={{ marginBottom: '20px' }}>Description: {document.description}</p>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="applicants-list">
+      <div className="applicants-list" style={{overflowY: 'auto'}}>
         {selectedDocument && (
           <>
             <h3>Applicants for Position: {selectedDocument.title}</h3>
@@ -98,11 +100,12 @@ const ListComponent = () => {
       <ul>
         {applicants.map((applicant, index) => (
           <li key={index} onClick={() => handleApplicantClick(applicant.uid)}>
-            <Link to={`/applicant_profile/${applicant.uid}`}>{applicant.name}</Link>
+            <Link to={`/applicant_profile/${applicant.uid}`}>View Profile: {applicant.name}</Link>
             {/* You can display other applicant details here */}
           </li>
         ))}
       </ul>
+      
     </div>
   );
 };

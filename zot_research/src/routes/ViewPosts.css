@@ -8,10 +8,13 @@
     list-style-type: none;
     padding: 0;
   }
+  .documents-list h1 {
+    font-weight: bolder;
   
+  }
   /* Style for each document item in the list */
   .document-item {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     padding: 10px;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -43,11 +46,13 @@
   }
   .lists-container {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
   
   .documents-list, .applicants-list {
     flex: 1;
+    flex-direction: row;
   }
   
   .applicants-list {

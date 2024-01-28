@@ -168,10 +168,10 @@
  .Other_Details {
     position:absolute;
     top: 55%;
-    left: 33%;
+    left: 4%;
     font-style: Sans-Serif;
     display: flex;
-    text-align:center;
+    text-align:start;
     font-size: 1vw;
     color: rgb(234, 237, 248);
  }
