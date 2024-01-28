@@ -1,9 +1,11 @@
-import { auth , googleProvider} from "./firebase";
+import { auth , googleProvider, db } from "./firebase";
 import { createUserWithEmailAndPassword,signInWithPopup, signOut } from "firebase/auth";
 import React, { useState, useEffect } from "react";
 import 'firebase/firestore';
+import { collection, setDoc, doc } from "firebase/firestore";
 
 export const Auth = () => {
+  console.log('auth');
   const [user, setUser] = useState(null);
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
@@ -16,35 +18,42 @@ export const Auth = () => {
   //   // }
   // };
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async(userAuth) => {
-      if (userAuth) {
-        const userRef = firestore.collection('users').doc(userAuth.uid);
-        const snapshot = await userRef.get();
-
-        if (!snapshot.exists) {
-          const {displayName, email, photoURL} = userAuth;
-          try {
-            await userRef.set({
-              displayName,
-              email,
-              photoURL
-            });
-          } catch(error) {
-            console.error('Error creating user document', error.message);
-          }
-        }
-
-        setUser(userAuth);
-      } else {
-        setUser(null);
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
+    console.log('useffect');
+  }, [user]);
   const signInWithGoogle = async () => {
     try {
-    await signInWithPopup(auth,googleProvider);
+      console.log('signinwithgoogle');
+    const userinfo = await signInWithPopup(auth, googleProvider);
+    if (userinfo) {
+      console.log('pass user info');
+      const unsubscribe = auth.onAuthStateChanged(async(userAuth) => {
+        console.log(userAuth.uid);
+        if (userAuth) {
+          console.log('pass user auth');
+          const studentsRef = collection(db, "students");
+          await setDoc(doc(studentsRef, userAuth.uid), {
+            name: userAuth.displayName, email: userAuth.email, photo: userAuth.photoURL
+          }
+          );
+          // const snapshot = await userRef.get();
+  
+          // if (!snapshot.exists) {
+          //   console.log('pass snapshot');
+          //   const {uid, displayName, email, photoURL} = userAuth;
+          //   writeUserData(uid, displayName, email, photoURL);
+            
+          //   }
+  
+  
+          setUser(userAuth);
+        } else {
+          setUser(null);
+        }
+      });
+  
+      return () => unsubscribe();
+    }
+    
     } catch (err){
       console.error(err);
     }
