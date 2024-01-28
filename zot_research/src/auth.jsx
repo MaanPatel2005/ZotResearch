@@ -4,21 +4,15 @@ import React, { useState, useEffect } from "react";
 import 'firebase/firestore';
 import { collection, setDoc, doc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import './auth.css';
+import UCI_Anteaters_logo from './assets/UCI_Anteaters_logo.png';
+import Typewrite from "./Typewrite.jsx";
 
 export const Auth = () => {
   console.log('auth');
+  const imagePath = 'public/uci_research_logo.jpg';
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  //   console.log(auth?.currentUser?.email);
-  // const signIn = async () => {
-  //   // try {
-  //   // await createUserWithEmailAndPassword(auth, email, password);
-  //   // } catch (err){
-  //   //   console.error(err);
-  //   // }
-  // };
   useEffect(() => {
     console.log('useffect');
   }, [user]);
@@ -68,9 +62,15 @@ export const Auth = () => {
     } catch (err){
       console.error(err);
     }
+
+  
   };
   return (
-    <div>
+    <div >
+      <img class = "uciLogo" src={UCI_Anteaters_logo} alt="UCI RESEARCH LOGO" style={{
+        height: 150
+      }}/>
+      
       {/* <input placeholder="Email.." onChange={(e) => setEmail(e.target.value)} />
       <input
         type="password"
@@ -78,8 +78,13 @@ export const Auth = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={signIn}> Signin</button> */}
-      <button onClick={signInWithGoogle}> Signin with google</button>
-      <button onClick={logOut}> logOut</button>
+      <button class = "buttonSignIn" onClick={signInWithGoogle}> 
+      Sign in with Google
+      </button>
+      <button class = "buttonLogOut" onClick={logOut}> Log Out</button>
+      <h1 class="typewrite"> 
+        <Typewrite text="Welcome to ZotResearch. Find your next research endeavour here. " delay={100} infinite />
+      </h1>
     </div>
   );
 };
