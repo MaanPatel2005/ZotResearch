@@ -45,6 +45,7 @@ export const Auth = () => {
                 name: userAuth.displayName,
                 email: userAuth.email,
                 photo: userAuth.photoURL,
+                uid: '',
                 university: '',
                 major: '',
                 degree: '',

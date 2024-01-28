@@ -1,0 +1,56 @@
+/* Style for the list container */
+.list-container {
+    margin-top: 20px;
+  }
+  
+  /* Style for the list of documents */
+  .document-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for each document item in the list */
+  .document-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for document items */
+  .document-item:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Style for the list of applicants */
+  .applicant-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Style for each applicant item in the list */
+  .applicant-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Style for heading of the applicant list */
+  .applicant-heading {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  .lists-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .documents-list, .applicants-list {
+    flex: 1;
+  }
+  
+  .applicants-list {
+    margin-left: 50px; /* Add margin between the lists */
+  }
+  

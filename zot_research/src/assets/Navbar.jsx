@@ -8,7 +8,8 @@ function Navbar({ isAdmin }) {
     { name: 'Dashboard', path: '/dashboard' },
     { name: 'Profile', path: '/profile' },
     { name: 'Messaging', path: '/messaging' },
-    { name: 'Make Posting', path: '/post' }
+    { name: 'Make Posting', path: '/post' },
+    { name: 'View Posts', path: '/ViewPost' }
   ];
     const adminList2 = [
       { name: 'Log Out', path: '/'}

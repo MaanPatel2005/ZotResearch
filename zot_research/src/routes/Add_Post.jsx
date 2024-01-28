@@ -47,6 +47,7 @@ function AddPost() {
           description: formData.description,
           PostedDate: formData.PostedDate,
           Deadline: formData.Deadline,
+          Applicants: [],
         });
 
         setResult('Post created successfully!');
