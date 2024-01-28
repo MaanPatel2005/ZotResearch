@@ -1,8 +1,8 @@
 // Dashboard.jsx
 
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../firebase';
+import { collection, getDocs, setDoc, doc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { auth, db } from "../firebase";
 import './Dashboard.css';
 
 
@@ -33,6 +33,19 @@ const ListComponent = () => {
     setSelectedDocument(selectedDoc);
   };
 
+  const handleClick =  (document) => {
+    console.log(document)
+    try {
+        const docRef = doc(db, "opportunities", document.id);
+        updateDoc(docRef, {
+          Applicants: arrayUnion(auth.currentUser.uid)
+      });
+      console.log('Value added to the list successfully!');
+  } catch (error) {
+      console.error('Error adding value to the list: ', error);
+  }
+  }
+
   // Filter documents based on search term
   const filteredDocuments = documents.filter(document =>
     document.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -48,6 +61,7 @@ const ListComponent = () => {
               {/* Render document fields here */}
               <p>Title: {document.title}</p>
               <p>Department: {document.department}</p>
+              <button onClick={handleClick(selectedDocument)}>Apply Now</button>
             </li>
           ))}
         </ul>
