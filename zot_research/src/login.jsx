@@ -33,9 +33,9 @@ const LoginPage = () => {
       <img src="uci_research_logo.jpg" alt="UCI RESEARCH LOGO" style={{
         height: 150
       }}/>
-      <h2>Welcome to ZotResearch</h2>
+      <h2 className = "title">Welcome to ZotResearch</h2>
       <form onSubmit={handleLogin}>
-        <label>
+        <label className = "title">
           Username:
           <input
             type="text"
@@ -44,7 +44,7 @@ const LoginPage = () => {
           />
         </label>
         <br />
-        <label>
+        <label className = "title">
           Password:
           <input
             type="password"

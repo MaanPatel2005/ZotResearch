@@ -7,7 +7,10 @@ body {
     margin: 0; /* Remove default margin */
     padding: 0;
   }
-  
+
+  .title {
+    font-weight: bold;
+  }
   .login-container {
     background-color: #ffffff;
     border-radius: 8px;
@@ -80,7 +83,7 @@ body {
     position: absolute;
     top: 10%;
     right: 30%;
-    border: 1px solid #8528e2;
+    
     background-color: #8528e2;
   }
   
