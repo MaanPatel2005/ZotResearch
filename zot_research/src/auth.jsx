@@ -48,7 +48,7 @@ export const Auth = () => {
   
   
           setUser(userAuth);
-          navigate("/Profile"); // Replace with your desired route
+          navigate("/CreateProfile"); // Replace with your desired route
 
         } else {
           setUser(null);

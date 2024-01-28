@@ -4,8 +4,8 @@ import React from 'react';
 import profpic from '../assets/profile_pic.jpeg';
 import './Profile.css';
 // import { auth , googleProvider, db } from "./firebase";
-import { collection, setDoc, doc } from "firebase/firestore";
-import { user } from "firebase/auth";
+// import { collection, setDoc, doc } from "firebase/firestore";
+// import { user } from "firebase/auth";
 
 function Profile() {
   // const studentsRef = collection(db, "students").doc(user.uid);

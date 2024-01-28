@@ -6,6 +6,8 @@ import Profile from './routes/Profile';
 import React from 'react';
 import AddPost from './routes/Add_Post';
 import { Auth } from './auth';
+import CreateProfile from './routes/CreatePost';
+
 
 const App = () => {
   const userIsAdmin = true; // Replace with your actual logic
@@ -17,6 +19,7 @@ const App = () => {
         <Route path="/Profile" element={<><Navbar isAdmin={userIsAdmin} /><Profile /></>}/>
         <Route path="/Messaging" element={<div>Messaging</div>} />
         <Route path="/Post" element={<><Navbar isAdmin={userIsAdmin} /><AddPost /></>}/>
+        <Route path="/CreateProfile" element={<CreateProfile />}/>
         {/* Add these routes if you have corresponding components */}
         {/* <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} /> */}
