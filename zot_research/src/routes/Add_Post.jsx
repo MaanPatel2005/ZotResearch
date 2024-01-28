@@ -15,6 +15,7 @@ function AddPost() {
     isDeadline: false,
     PostedDate: "",
     Deadline: "",
+    Applicants: []
   });
   const [result, setResult] = useState("");
 
