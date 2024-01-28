@@ -8,17 +8,21 @@ import './Profile.css';
 import { collection, setDoc, doc, getDoc } from "firebase/firestore";
 // import firebase from 'firebase/app';
 import 'firebase/auth'; // import specific Firebase services you need
+import { useParams } from 'react-router-dom';
+
 
 // import { Auth } from "firebase/auth";
 // var userData;
 
 function Profile() {
   const [userData, setUserData] = useState(null);
+  const { applicantId } = useParams();
+
 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const docRef = doc(db, "students", auth.currentUser.uid);
+        const docRef = doc(db, "students", applicantId);
         const docSnap = await getDoc(docRef);
         if (docSnap.exists()) {
           setUserData(docSnap.data());

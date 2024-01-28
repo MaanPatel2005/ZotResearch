@@ -2,7 +2,7 @@ import { auth , googleProvider, db } from "./firebase";
 import { createUserWithEmailAndPassword,signInWithPopup, signOut } from "firebase/auth";
 import React, { useState, useEffect } from "react";
 import 'firebase/firestore';
-import { collection, setDoc, doc } from "firebase/firestore";
+import { collection, setDoc, doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import './auth.css';
 import UCI_Anteaters_logo from './assets/UCI_Anteaters_logo.png';
@@ -28,10 +28,28 @@ export const Auth = () => {
         if (userAuth) {
           console.log('pass user auth');
           const studentsRef = collection(db, "students");
-          await setDoc(doc(studentsRef, userAuth.uid), {
-            name: userAuth.displayName, email: userAuth.email, photo: userAuth.photoURL
+            const userDocRef = doc(studentsRef, userAuth.uid);
+
+            const docSnapshot = await getDoc(userDocRef);
+            if (docSnapshot.exists()) {
+              console.log('Document already exists, skipping...');
+              navigate("/Profile");
+            } else {
+              console.log('Document does not exist, creating...');
+              await setDoc(userDocRef, {
+                name: userAuth.displayName,
+                email: userAuth.email,
+                photo: userAuth.photoURL,
+                uid: '',
+                university: '',
+                major: '',
+                degree: '',
+                description: '',
+                research: '',
+                resume: '',
+            });
+            navigate("/CreateProfile");
           }
-          );
           // const snapshot = await userRef.get();
           // if (!snapshot.exists) {
           //   console.log('pass snapshot');
@@ -40,7 +58,7 @@ export const Auth = () => {
           //   }
   
           setUser(userAuth);
-          navigate("/Profile"); // Replace with your desired route
+           // Replace with your desired route
 
         } else {
           setUser(null);
@@ -76,13 +94,14 @@ export const Auth = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={signIn}> Signin</button> */}
+
       <button class = "buttonSignIn" onClick={signInWithGoogle}> 
         Sign in with Google
       </button>
-      <button class = "buttonLogOut" onClick={logOut}> Log Out</button>
       <h1 class="typewrite"> 
         <Typewrite text="Welcome to ZotResearch. Find your next research endeavour here. " delay={100} infinite />
       </h1>
+
     </div>
   );
 };

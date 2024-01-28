@@ -137,9 +137,10 @@
     position:absolute;
     top: 50%;
     font-style: Sans-Serif;
-    left: 30%;
+    left: 22%;
+    font-weight: bolder;
     display: flex;
-    font-size: 1.5vw;
+    font-size: 1vw;
     text-align:start;
     color: rgb(234, 237, 248);
  }
@@ -166,12 +167,12 @@
 }
  .Other_Details {
     position:absolute;
-    top: 60%;
-    left: 30%;
+    top: 55%;
+    left: 33%;
     font-style: Sans-Serif;
     display: flex;
-    text-align:start;
-    font-size: 0.8vw;
+    text-align:center;
+    font-size: 1vw;
     color: rgb(234, 237, 248);
  }
   .imagecrop {
