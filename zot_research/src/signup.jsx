@@ -15,7 +15,7 @@ const SignUpPage = () => {
     console.log('Sign-up details:', { email, userId, password, username });
     // Add your logic to send data to a server or perform any necessary actions
   };
-
+ 
   return (
     <div className = "signupbox">
       <h2 className = "title">Sign Up</h2>
