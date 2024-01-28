@@ -4,15 +4,17 @@ import autosize from 'autosize';
 import { auth, db } from "../firebase";
 import 'firebase/firestore';
 import { collection, setDoc, doc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 function CreatePost() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    name: "",
+    research: "",
     description: "",
     university: "",
     major: "",
     degree: "",
-    isDeadline: false,
+    resume: ""
   });
   const [result, setResult] = useState("");
 
@@ -37,15 +39,19 @@ function CreatePost() {
 
         // Use setDoc to add the data to Firestore
         await setDoc(doc(studentsRef, user.uid), {
-          name: formData.name,
+          name: user.displayName, email: user.email, photo: user.photoURL, 
+          research: formData.research,
           description: formData.description,
           university: formData.university,
           major: formData.major,
           degree: formData.degree,
-          isDeadline: formData.isDeadline,
+          resume: formData.resume,
         });
 
         setResult('Profile created successfully!');
+        navigate("/Profile");
+
+
       } else {
         setResult('User not authenticated.');
       }
@@ -67,12 +73,12 @@ function CreatePost() {
         </div>
         <form className="post-form">
           <div className="form-group">
-            <label>Name:</label>
+            <label>Research:</label>
             <input
               type="text"
               className="form-control"
-              name="name"
-              value={formData.name}
+              name="research"
+              value={formData.research}
               onChange={handleInputChange}
             />
           </div>
@@ -103,6 +109,16 @@ function CreatePost() {
               className="form-control"
               name="degree"
               value={formData.degree}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label>Resume:</label>
+            <input
+              type="link"
+              className="form-control"
+              name="resume"
+              value={formData.resume}
               onChange={handleInputChange}
             />
           </div>
