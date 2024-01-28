@@ -1,0 +1,88 @@
+/* SignUpPage.css */
+/* Container styles */
+div {
+    font-family: 'Verdana', sans-serif;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(250, 0, 0, 0.1);
+  }
+  
+  .title{
+    padding: 40px;
+  }
+  /* Form styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Label styles */
+  label {
+    margin-bottom: 8px;
+  }
+  
+  /* Input styles */
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 40px;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #55ff5a;
+    color: white;
+    padding: 10px;
+    border: none;
+    position: absolute;
+    right: 42%;
+    top: 89%;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .inputbox {
+    border-radius: 10%;
+    padding: 5%;
+    max-width: 30px;
+  }
+
+  /* Button hover effect */
+  button:hover {
+    background-color: #000000;
+  }
+
+  div#root {
+    margin-top: 0px;
+    padding: 0px;
+    margin: 0;
+    background-color: #2b2727;
+    max-width: 100%; /* Ensure full width of the container */
+  }
+
+  div#root > div {
+    margin-top: 15px;
+    height: 500px;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    right: 35%;
+    border: 1px solid #3e135f;
+    background-color: rgb(133, 125, 125);
+  }
+
+  div#root > div:hover {
+    color: rgb(77, 0, 150);
+  }
+
+  .signupbox {
+    background-color: aquamarine;
+  }
