@@ -78,14 +78,14 @@ const ListComponent = () => {
         <div className="content-info">
           {selectedDocument && (
             <>
-              <h2 className='Titletitle'>Title: {selectedDocument.title}</h2>
-              <p className='stuffies'>About This Role:</p>
-              <p className="info-department">Department: {selectedDocument.department}</p>
+              <h2 className='Titletitle'>Posting: {selectedDocument.title}</h2>
+              <h3 className='dates'>Date Posted: {selectedDocument.PostedDate}     -      Deadline: {selectedDocument.Deadline}</h3>
+              <h4> Part Time Position     -      {selectedDocument.department}</h4>
+              <h5 className='stuffies'>About This Role:</h5>
               <p className="info-contact">Contact Email: {selectedDocument.contactEmail}</p>
               <p className="info-name">Name: {selectedDocument.name}</p>
               <p className="info-description">Description: {selectedDocument.description}</p>
-              <p className="info-posted-date">Date Posted: {selectedDocument.PostedDate}</p>
-              <p className="info-deadline">Deadline: {selectedDocument.Deadline}</p>
+              
             </>
           )}
         </div>

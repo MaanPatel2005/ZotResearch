@@ -60,6 +60,7 @@
 }
 .stuffies {
   font-weight: bolder;
+  font-size:medium;
 
 }
 @keyframes fadeIn {

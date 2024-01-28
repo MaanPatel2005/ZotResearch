@@ -21,15 +21,17 @@ body {
 
 .uciLogo {
     margin: auto;
-    padding: 10%;
-    margin-left: 160%;
+    padding: 30%;
+    position: absolute;
+    bottom: 15%;
+    left: 16%;
     text-align: center;
 }
 
 .buttonSignIn {
-    position: relative;
+    position: absolute;
     margin: 5%;
-    left: 140%;
+    left: 40%;
     background-color: black;
     color: white;
     padding: 10px 15px;
@@ -37,6 +39,7 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    top: 25%;
     font-family: Georgia, serif;
 }
 
@@ -78,5 +81,6 @@ body {
     font-size: 37px;
     font-family: sans-serif;
     color: #5a0aaa;
+    top:40%;
     text-shadow: 0 0 20px #5a0aaa; 
 }
