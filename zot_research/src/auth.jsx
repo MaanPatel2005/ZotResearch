@@ -8,6 +8,7 @@ import './auth.css';
 import UCI_Anteaters_logo from './assets/UCI_Anteaters_logo.png';
 import Typewrite from "./Typewrite.jsx";
 
+
 export const Auth = () => {
   console.log('auth');
   const imagePath = 'public/uci_research_logo.jpg';
@@ -32,14 +33,11 @@ export const Auth = () => {
           }
           );
           // const snapshot = await userRef.get();
-  
           // if (!snapshot.exists) {
           //   console.log('pass snapshot');
           //   const {uid, displayName, email, photoURL} = userAuth;
           //   writeUserData(uid, displayName, email, photoURL);
-            
           //   }
-  
   
           setUser(userAuth);
           navigate("/Profile"); // Replace with your desired route
@@ -79,7 +77,7 @@ export const Auth = () => {
       />
       <button onClick={signIn}> Signin</button> */}
       <button class = "buttonSignIn" onClick={signInWithGoogle}> 
-      Sign in with Google
+        Sign in with Google
       </button>
       <button class = "buttonLogOut" onClick={logOut}> Log Out</button>
       <h1 class="typewrite"> 
