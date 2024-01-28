@@ -1,63 +1,43 @@
-/* nav.css */
+/* Dashboard.css */
 
-body, h1, h2, h3, p, ul, li {
-    margin: 0;
-    padding: 0;
+.dashboard-container {
+  display: flex;
+  max-width: 1200px; /* Adjust the maximum width as needed */
+  margin: 20px auto; /* Add margin for centering */
+}
+
+.left-column {
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scroll for the list */
+  padding: 5vw;
+  background-color: #f0f0f0; /* Add your desired background color */
+}
+
+.right-column {
+  flex: 2;
+  padding: 20vw;
+  background-color: #ffffff; /* Add your desired background color */
+}
+
+.left-column li {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.left-column li:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 100%) {
+  .dashboard-container {
+    flex-direction: row;
   }
-  
-  .navbar {
-    background-color: #181719;
-    padding: 40px;
-    position: flex;
-    flex-direction: column;
-    border-radius: 10px;
+
+  .left-column, .right-column {
+    max-width: 100%;
+    width: 10vw;
   }
-  
-  .navbar ul li:hover {
-    text-shadow: 2px 8px 8px #8528e2;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    padding: 100;
-    display: flex;
-    flex-direction: column
-  }
-  
-  li {
-    margin-right: 15px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  
-  /* Optional: Add styles for active link */
-  a.active {
-    color: yellow;
-  }
-  
-  /* Optional: Style for dropdown menu */
-  ul.dropdown {
-    position: relative;
-  }
-  
-  li.dropdown-item {
-    position: relative;
-  }
-  
-  ul.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #a61212;
-    padding: 100px;
-  }
-  
-  li:hover > ul.dropdown-menu {
-    display: block;
-  }
-  
+}

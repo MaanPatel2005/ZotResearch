@@ -7,7 +7,7 @@ import React from 'react';
 import AddPost from './routes/Add_Post';
 import { Auth } from './auth';
 import CreateProfile from './routes/CreateProfile';
-
+import Dashboard from './routes/Dashboard';
 
 const App = () => {
   const userIsAdmin = true; // Replace with your actual logic
@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/Messaging" element={<div>Messaging</div>} />
         <Route path="/Post" element={<><Navbar isAdmin={userIsAdmin} /><AddPost /></>}/>
         <Route path="/CreateProfile" element={<CreateProfile />}/>
+        <Route path="/Dashboard" element={<><Navbar isAdmin={userIsAdmin} /><Dashboard /></>}/>
         {/* Add these routes if you have corresponding components */}
         {/* <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} /> */}
