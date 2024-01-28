@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './Add_Post.css';
+import './CreateProfile.css';
 import autosize from 'autosize';
+import { auth, db } from "../firebase";
+import 'firebase/firestore';
+import { collection, setDoc, doc } from "firebase/firestore";
 
 
 function AddPost() {
@@ -8,7 +11,6 @@ function AddPost() {
     title: "",
     description: "",
     contactEmail: "",
-    positionName: "",
     department: "",
     isDeadline: false,
     PostedDate: "",
@@ -24,12 +26,39 @@ function AddPost() {
     }));
   };
 
-  const handleButtonClick = (e) => {
+  const handleButtonClick = async (e) => {
     e.preventDefault();
     // Process the form data and update the variable (result in this case)
     // For now, just displaying the form data in the console
-    console.log(formData);
-    setResult(`Entry submitted`);
+    try {
+      const user = auth.currentUser;
+      console.log(user)
+
+      if (user) {
+        console.log(user.uid);
+        const opportunitiesRef = collection(db, 'opportunities');
+          const userDocRef = doc(opportunitiesRef, user.uid);
+
+        // Use setDoc to add the data to Firestore
+        await setDoc(doc(opportunitiesRef), {
+          uid: user.uid, name: user.displayName, title: formData.title, email: formData.contactEmail,
+          department: formData.department,
+          contactEmail: formData.contactEmail,
+          description: formData.description,
+          PostedDate: formData.PostedDate,
+          Deadline: formData.Deadline,
+        });
+
+        setResult('Post created successfully!');
+        
+
+
+      } else {
+        setResult('User not authenticated.');
+      }
+    } catch (error) {
+      setResult(`Error: ${error.message}`);
+    }
   };
   useEffect(() => {
     // Apply autosize to all textareas when the component mounts
@@ -60,16 +89,6 @@ function AddPost() {
               className="form-control"
               name="contactEmail"
               value={formData.contactEmail}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Position Name:</label>
-            <input
-              type="text"
-              className="form-control"
-              name="positionName"
-              value={formData.positionName}
               onChange={handleInputChange}
             />
           </div>
