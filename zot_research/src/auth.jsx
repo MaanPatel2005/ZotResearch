@@ -3,10 +3,12 @@ import { createUserWithEmailAndPassword,signInWithPopup, signOut } from "firebas
 import React, { useState, useEffect } from "react";
 import 'firebase/firestore';
 import { collection, setDoc, doc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 export const Auth = () => {
   console.log('auth');
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
   //   console.log(auth?.currentUser?.email);
@@ -46,6 +48,8 @@ export const Auth = () => {
   
   
           setUser(userAuth);
+          navigate("/Profile"); // Replace with your desired route
+
         } else {
           setUser(null);
         }
