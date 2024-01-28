@@ -1,0 +1,82 @@
+body {
+    font-family: "Helvetica", "Sans Serif";
+    justify-content: stretch; /* Center content horizontally */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0;
+    max-width: 200%;
+    background-color: rgb(197, 178, 197);
+  }
+
+.title {
+    font-weight:bolder;
+    color: whitesmoke;
+    margin: auto;
+    width: 100%;
+    padding: 10%;
+    margin-left: 110%;
+    text-align: center;
+    font: Helvetica;
+} 
+
+.uciLogo {
+    margin: auto;
+    padding: 10%;
+    margin-left: 160%;
+    text-align: center;
+}
+
+.buttonSignIn {
+    position: relative;
+    margin: 5%;
+    left: 140%;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+}
+
+.buttonLogOut {
+    position: relative;
+    margin: 5%;
+    left: 140%;
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+}
+
+.buttonLogOut:hover {
+    color: #5a0aaa;
+    box-shadow: 0 0 10px #5a0aaa; 
+  }
+
+.buttonSignIn:hover {
+    color: #5a0aaa;
+    box-shadow: 0 0 10px #5a0aaa; 
+  }
+
+.typing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.typewrite {
+    position: absolute;
+    padding: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 37px;
+    font-family: sans-serif;
+    color: #5a0aaa;
+    text-shadow: 0 0 20px #5a0aaa; 
+}
